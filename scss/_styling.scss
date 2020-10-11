@@ -1,0 +1,89 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: $background;
+  color: $color;
+  padding: 12px;
+  
+  header {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    
+    h4 {
+      font-size: 24px;
+    }
+    
+    nav {
+      ul {
+        display: flex;
+
+        li {
+          list-style-type: none;
+          padding: 12px 18px;
+          margin: 12px 12px;
+
+          a {
+            text-decoration: none;
+            color: $color;
+          }
+        }
+      }
+    }
+  } /* END OF HEADER */
+  
+  main {
+    form {
+      width: 200px;
+      margin: auto;
+    }
+    div {
+      padding: 12px 0;
+      
+      h6 {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      
+      input[type=text], input[type=password] {
+        width: 196px;
+        border: none;
+        background-color: #414141;
+        color: $color;
+        height: 32px;
+        padding: 0 0 0 4px;
+      }
+      input[type=submit] {
+        width: 100px;
+        height: 30px;
+        border: none;
+      }
+    }
+  }
+} /* END OF DEFAULT BREAKPOINT */
+
+@include respond-to(large) {
+  body {
+    padding: 24px;
+
+    header {
+      flex-flow: row;
+      justify-content: space-between;
+      padding: 0 0 50px 0;
+
+      nav {
+        ul {
+          li {
+            margin: 0 12px;
+          }
+          li:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    } /* END OF HEADER */
+  }
+} /* END OF LARGE BREAKPOINT */
